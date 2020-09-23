@@ -1,11 +1,19 @@
 var exec = require('cordova/exec')
 
-exports.setAutoLogAppEventsEnabled = function getLoginStatus (enabled, s, f) {
-  exec(s, f, 'FacebookConnectPlugin', 'setAutoLogAppEventsEnabled', [enabled])
+exports.setAutoLogAppEventsEnabled = function (enabled, s, f) {
+  exec(s, f, 'FacebookConnectPlugin', 'setAutoLogAppEventsEnabled', [enabled == null ? true : enabled])
 }
 
-exports.setAdvertiserIDCollectionEnabled = function getLoginStatus (enabled, s, f) {
-  exec(s, f, 'FacebookConnectPlugin', 'setAdvertiserIDCollectionEnabled', [enabled])
+exports.setAdvertiserIDCollectionEnabled = function (enabled, s, f) {
+  exec(s, f, 'FacebookConnectPlugin', 'setAdvertiserIDCollectionEnabled', [enabled == null ? true : enabled])
+}
+
+exports.isAutoLogAppEventsEnabled = function (s, f) {
+  exec(s, f, 'FacebookConnectPlugin', 'isAutoLogAppEventsEnabled', [])
+}
+
+exports.isAdvertiserIDCollectionEnabled = function (s, f) {
+  exec(s, f, 'FacebookConnectPlugin', 'isAdvertiserIDCollectionEnabled', [])
 }
 
 exports.getLoginStatus = function getLoginStatus (s, f) {

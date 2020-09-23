@@ -21,6 +21,8 @@
     <preference name="APP_NAME" />
     <preference name="FACEBOOK_HYBRID_APP_EVENTS" default="false" />
     <preference name="FACEBOOK_ANDROID_SDK_VERSION" default="5.13.0"/>
+    <preference name="FACEBOOK_AUTO_LOG_APP_EVENTS_ENABLED" default="false" />
+    <preference name="FACEBOOK_ADVERTISER_ID_COLLECTION_ENABLED" default="false" />
 
     <engines>
         <!-- Requires > 3.5.0 because of the custom Framework tag for iOS [CB-6698] -->
@@ -109,6 +111,14 @@
 
         <config-file target="*-Info.plist" parent="FacebookHybridAppEvents">
             <string>$FACEBOOK_HYBRID_APP_EVENTS</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="FacebookAutoLogAppEventsEnabled">
+            <string>$FACEBOOK_AUTO_LOG_APP_EVENTS_ENABLED</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="FacebookAdvertiserIDCollectionEnabled">
+            <string>$FACEBOOK_ADVERTISER_ID_COLLECTION_ENABLED</string>
         </config-file>
 
         <config-file target="*-Info.plist" parent="CFBundleURLTypes">

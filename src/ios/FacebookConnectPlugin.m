@@ -62,6 +62,35 @@
 
 #pragma mark - Cordova commands
 
+- (void)setAutoLogAppEventsEnabled:(CDVInvokedUrlCommand *)command {
+    if ([command.arguments count] == 0) {
+        // Not enough arguments
+        CDVPluginResult *res = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Invalid arguments"];
+        [self.commandDelegate sendPluginResult:res callbackId:command.callbackId];
+        return;
+    }
+
+    [FBSDKSettings setAutoLogAppEventsEnabled:[[[command arguments] objectAtIndex:0] boolValue]];
+    
+    [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:res callbackId:command.callbackId];
+}
+
+- (void)setAdvertiserIDCollectionEnabled:(CDVInvokedUrlCommand *)command {
+    if ([command.arguments count] == 0) {
+        // Not enough arguments
+        CDVPluginResult *res = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Invalid arguments"];
+        [self.commandDelegate sendPluginResult:res callbackId:command.callbackId];
+        return;
+    }
+
+    [FBSDKSettings setAdvertiserIDCollectionEnabled:[[[command arguments] objectAtIndex:0] boolValue]];
+    
+    [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:res callbackId:command.callbackId];
+}
+
+
 - (void)getLoginStatus:(CDVInvokedUrlCommand *)command {
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                                                   messageAsDictionary:[self responseObject]];

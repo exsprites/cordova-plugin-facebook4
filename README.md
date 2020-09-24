@@ -2,6 +2,16 @@
 
 > Use Facebook SDK in Cordova projects
 
+## Note
+
+This is a fork from the original `cordova-plugin-facebook4` to add the following features (iOS platform only):
+
+* Allow to enable/disable `FacebookAutoLogAppEventsEnabled` and `FacebookAdvertiserIDCollectionEnabled` using plugin's variable `FACEBOOK_AUTO_LOG_APP_EVENTS_ENABLED` and `FACEBOOK_ADVERTISER_ID_COLLECTION_ENABLED`, respectively.
+
+* Added method to programmatically change these settings as well.
+
+This is useful to delay the collection of automatically logged events, such as to obtain User consent or fulfill legal obligations.
+
 ## Table of contents
 
 - [Installation](#installation)

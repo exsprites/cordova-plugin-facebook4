@@ -95,13 +95,13 @@
 
 - (void)isAutoLogAppEventsEnabled:(CDVInvokedUrlCommand *)command {
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
-                                                        messageAsBool:[FBSDKSettings.isAutoLogAppEventsEnabled]];
+                                                        messageAsBool:[FBSDKSettings isAutoLogAppEventsEnabled]];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void)isAdvertiserIDCollectionEnabled:(CDVInvokedUrlCommand *)command {
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
-                                                        messageAsBool:[FBSDKSettings.isAdvertiserIDCollectionEnabled]];
+                                                        messageAsBool:[FBSDKSettings isAdvertiserIDCollectionEnabled]];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
